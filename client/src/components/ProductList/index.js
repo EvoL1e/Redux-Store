@@ -7,8 +7,12 @@ import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
+import { useDispatch, useSelector } from 'react-redux';
+import store from "../../utils/reactReduxStore"
+
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
+  const dispatch = useDispatch();
+  const state = useSelector(useStoreContext);
 
   const { currentCategory } = state;
 

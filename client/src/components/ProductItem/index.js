@@ -5,8 +5,12 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
+import { useDispatch, useSelector } from 'react-redux';
+import store from "../../utils/reactReduxStore"
+
 function ProductItem(item) {
-  const [state, dispatch] = useStoreContext();
+  const dispatch = useDispatch();
+  const state = useSelector(useStoreContext);
 
   const {
     image,
